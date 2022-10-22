@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace Unit02.Game
 {
     public class Director {
+        Card card = new Card();
         int[] _cards = {0, 0};
         bool _isPlaying = true;
         int _totalScore = 300;
@@ -19,7 +20,6 @@ namespace Unit02.Game
         public void guess() {
             for (int i = 0; i < 2; i++)
             {
-                Card card = new Card();
                 int a = card.draw();
                 _cards[i] = a;
             }
@@ -71,17 +71,6 @@ namespace Unit02.Game
                     _isPlaying = false;
                 }
             }
-        }
-    }
-
-    class Card {
-        public Card() {
-
-        }
-        public int draw(){
-            Random random = new Random();
-            int _value = random.Next(1, 13);
-            return _value;
         }
     }
 }
